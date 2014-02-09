@@ -1,12 +1,20 @@
 ThermalViewer::Application.routes.draw do
+  get "rad_therm_models/new"
+  get "rad_therm_models/create"
+  get "rad_therm_models/update"
+  get "rad_therm_models/edit"
+  get "rad_therm_models/destroy"
+  get "rad_therm_models/index"
+  get "rad_therm_models/show"
+  get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  #    root 'home#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  #    get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

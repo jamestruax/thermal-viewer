@@ -1,0 +1,5 @@
+<h1>RadTherm Models - (<%= @models.size %>)</h1>
+
+<% @models.each do |model| %>
+   <%= link_to model.name, controller: "rad_therm_models", action: "show", id: model.id %>
+<% end %>
