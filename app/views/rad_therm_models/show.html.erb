@@ -17,10 +17,16 @@
 
     scene = new THREE.Scene();
 
-    var geometry = new THREE.Geometry();<% index = 0 %><% @model.geometry.polygons.each do |poly| %><% poly.vertices.each do |vertex| %>
-    geometry.vertices.push(new THREE.Vector3(<%= vertex.x%>,<%= vertex.y%>,<%= vertex.z%>));<% end %>
+    var geometry = new THREE.Geometry();
+    <% index = 0 %>
+    <% @model.geometry.polygons.each do |poly| %>
+      <% poly.vertices.each do |vertex| %>
+        geometry.vertices.push(new THREE.Vector3(<%= vertex.x%>,<%= vertex.y%>,<%= vertex.z%>));
+      <% end %>
 
-	geometry.faces.push(new THREE.Face3(<%= index%>,<%= index+1%>,<%= index+2%>));<% index += 3 %><% end %>
+      geometry.faces.push(new THREE.Face3(<%= index%>,<%= index+1%>,<%= index+2%>));<% index += 3 %>
+    <% end %>
+	
 	geometry.computeBoundingSphere();
 
 	var material = new THREE.MeshBasicMaterial({
